@@ -189,7 +189,7 @@ public class TestXML {
 	public static String setTuLingXML(Message mes){
 		StringBuilder str=new StringBuilder();
 		try {
-			URL url=new URL("http://www.tuling123.com/openapi/api?key=83c139211c4e42e885fc518e654580ca&info="+new String(mes.getContent().getBytes("UTF-8")));
+			URL url=new URL("http://www.tuling123.com/openapi/api?key= 这里改成自己的KEY &info="+new String(mes.getContent().getBytes("UTF-8")));
 			HttpURLConnection con=(HttpURLConnection) url.openConnection();
 			BufferedReader buf=new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			String strs=null;
