@@ -6,8 +6,6 @@
 
 把 WeiXinServer.java 中的 token 改成自己的(token为随意字符串,使用时与微信后台token对应即可)
 
-去图灵官网注册一个账号,把TestXML.java 中的KEY改成自己的KEY即可使用
-
 本程序支持拓展。
 
 本项目为Maven构建。
@@ -19,4 +17,5 @@ Tool.properties
 格式为
 
 url=http://www.tuling123.com/openapi/api?key=
+
 key=这里写你自己的key 注:若没有key,去图灵官网申请一个账号创建应用就看到了
