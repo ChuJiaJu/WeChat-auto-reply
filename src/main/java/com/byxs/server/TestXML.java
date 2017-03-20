@@ -17,6 +17,7 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
 import com.byxs.entity.Message;
+import com.byxs.tools.Tool;
 
 
 /**
@@ -189,7 +190,8 @@ public class TestXML {
 	public static String setTuLingXML(Message mes){
 		StringBuilder str=new StringBuilder();
 		try {
-			URL url=new URL("http://www.tuling123.com/openapi/api?key= 这里改成自己的KEY &info="+new String(mes.getContent().getBytes("UTF-8")));
+			Tool.init();//加载配置文件
+			URL url=new URL(Tool.t.get("url").toString()+Tool.t.get("key").toString()+"&info="+new String(mes.getContent().getBytes("UTF-8")));
 			HttpURLConnection con=(HttpURLConnection) url.openConnection();
 			BufferedReader buf=new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			String strs=null;
@@ -296,10 +298,4 @@ public class TestXML {
 		return str.toString();
 	}
 	
-	public static void main(String[] args) {
-		Message mes=new Message();
-		
-		mes.setContent("新闻");
-		System.out.println(setTuLingXML(mes));
-	}
 }
